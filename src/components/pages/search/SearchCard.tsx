@@ -9,7 +9,7 @@ function SearchCard({data}: PackageListItemProps) {
         <Chip key={index} label={keyword} sx={{ borderRadius: '6px' }} />
     ))
     return (
-        <Box component={Link} to={`/packages/${data.name}`} sx={{ display: 'flex', flexDirection: 'column', gap: 1 , pt:1,pb:0.5, px:0.5, width: '100%', textDecoration: 'none', color: 'black'}}>
+        <Box component={Link} to={`https://www.npmjs.com/package/${data.name}`} sx={{ display: 'flex', flexDirection: 'column', gap: 1 , pt:1,pb:0.5, px:0.5, width: '100%', textDecoration: 'none', color: 'black'}}>
             <Typography variant='h6' fontWeight={500}>{data.name}</Typography>
             <Typography variant='body1' color='gray'>{data.description}</Typography>
             <Stack  direction={'row'} gap={1} my={1} sx={{flexWrap: 'wrap'}} p={0} >
