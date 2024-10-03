@@ -1,15 +1,15 @@
-import SearchCard from "../components/pages/search/SearchCard";
+import SearchCard from "../../components/pages/search/SearchCard";
 import { useState } from 'react';
-import { Box, Stack, Pagination, Typography} from "@mui/material"
-import SortSearch from "../components/pages/search/SortSearch";
+import { Box, Stack, Pagination, Typography } from "@mui/material"
+import SortSearch from "../../components/pages/search/SortSearch";
 import { useLoaderData } from "react-router-dom";
 function SearchPage() {
     const [value, setValue] = useState<string>('Optimal');
     const data = useLoaderData();
     console.log('this is data from loader : ', data);
-    
+
     console.log('this si value : ', value);
-    
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue((event.target as HTMLInputElement).value);
     };
@@ -21,8 +21,8 @@ function SearchPage() {
                     <Pagination count={10} variant="outlined" shape="rounded" />
                 </Stack>
             </Box>
-            <Stack  maxWidth={'xl'} mx={'auto'}  direction={{ md: 'row', sm: 'column'}} >
-                <SortSearch onChange={handleChange} value={value}/>
+            <Stack maxWidth={'xl'} mx={'auto'} direction={{ md: 'row', sm: 'column' }} >
+                <SortSearch onChange={handleChange} value={value} />
                 <Stack sx={{ width: '100%' }} px={{ md: 4, xs: 2 }} py={1}>
                     <SearchCard />
                     <SearchCard />
@@ -32,7 +32,7 @@ function SearchPage() {
                     <SearchCard />
                     <SearchCard />
                     <SearchCard />
-                <Pagination count={10} variant="outlined" shape="rounded" sx={{py:1}}/>
+                    <Pagination count={10} variant="outlined" shape="rounded" sx={{ py: 1 }} />
                 </Stack>
 
             </Stack>

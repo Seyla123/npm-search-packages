@@ -2,19 +2,19 @@ import { createBrowserRouter } from 'react-router-dom';
 import Root from '../pages/Root';
 import HomePage from '../pages/HomePage';
 import DetailPage from '../pages/DetailPage';
-import SearchPage from '../pages/SearchPage';
+import SearchPage from '../pages/search/SearchPage';
 const router = createBrowserRouter([
     {
         element: <Root />,
         children: [
             {
-                index:true,
+                index: true,
                 element: <HomePage />
             },
             {
                 path: '/search',
                 element: <SearchPage />,
-                loader: async ({request}) => {
+                loader: async ({ request }) => {
                     const { searchParams } = new URL(request.url);
                     const q = searchParams.get('q');
                     const res = await fetch(
