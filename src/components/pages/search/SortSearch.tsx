@@ -1,4 +1,4 @@
-import { Stack, FormControl, FormLabel, FormControlLabel, RadioGroup, Radio, Divider } from '@mui/material'
+import { Stack, FormControl, Box, FormControlLabel, RadioGroup, Radio, Divider } from '@mui/material'
 interface SortOptions {
     value : string,
     onChange : (event : React.ChangeEvent<HTMLInputElement>) =>void;
@@ -7,7 +7,7 @@ function SortSearch({onChange, value} : SortOptions) {
   return (
     <Stack sx={{width:  {md: '50%', sm: '100%'}, pl: { md: 2, xs: 2 } , pr:{md:2, xs:1}}} >
     <FormControl sx={{color: 'black'}}>
-        <FormLabel id="demo-radio-buttons-group-label" sx={{ fontWeight: 'bold', color: 'black',mb:1,mt:0.5 }}>Sort Packages</FormLabel>
+        <Box component={'label'} sx={{ fontWeight: 'bold', color: 'black',mb:1,mt:0.5 }}>Sort Packages</Box>
         <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             name="radio-buttons-group"

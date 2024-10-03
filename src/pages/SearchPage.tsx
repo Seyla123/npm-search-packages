@@ -24,7 +24,11 @@ function SearchPage() {
                     <SearchCard />
                     <SearchCard />
                     <SearchCard />
-                <Pagination count={10} variant="outlined" shape="rounded" sx={{pb:2}}/>
+                    <SearchCard />
+                    <SearchCard />
+                    <SearchCard />
+                    <SearchCard />
+                <Pagination count={10} variant="outlined" shape="rounded" sx={{py:1}}/>
                 </Stack>
 
             </Stack>

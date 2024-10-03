@@ -3,7 +3,7 @@ import { Box, Typography, Chip, Stack, Divider } from '@mui/material'
 function SearchCard() {
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 , py:2, px:0.5, width: '100%'}}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 , pt:1,pb:0.5, px:0.5, width: '100%'}}>
             <Typography variant='h6' fontWeight={500}>react-router</Typography>
             <Typography variant='body1' color='gray'>Declarative routing for React</Typography>
             <Stack  direction={'row'} gap={1} my={1} sx={{flexWrap: 'wrap'}} p={0} >
