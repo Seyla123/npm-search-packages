@@ -18,7 +18,7 @@ const router = createBrowserRouter([
                 loader: searchLoader
             },
             {
-                path: '/detail',
+                path: '/packages/:package',
                 element: <DetailPage />
             }
         ]
