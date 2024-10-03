@@ -5,7 +5,7 @@ interface SortOptions {
 }
 function SortSearch({onChange, value} : SortOptions) {
   return (
-    <Stack sx={{width:  {md: '50%', sm: '100%'}, pl: { md: 2, xs: 2 } , pr:{md:2, xs:1}}} >
+    <Stack sx={{width:  {md: '30%', sm: '100%'}, pl: { md: 2, xs: 2 } , pr:{md:2, xs:1}}} >
     <FormControl sx={{color: 'black'}}>
         <Box component={'label'} sx={{ fontWeight: 'bold', color: 'black',mb:1,mt:0.5 }}>Sort Packages</Box>
         <RadioGroup

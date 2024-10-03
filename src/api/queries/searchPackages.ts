@@ -7,28 +7,32 @@
  * @returns {Promise<PackageSummary[]>} - A promise that resolves to an array of PackageSummary objects.
  */
 import type { PackageSummary } from "../types/PackageSummary";
-interface SearchResponse{
+interface SearchResponse {
     objects: {
         package: {
             name: string;
             version: string;
             description: string;
             keywords: string[];
+            publisher: {
+                username: string
+            }
         }
     }[]
 }
-export const searchPackages = async (q:string): Promise<PackageSummary[]> => {
+export const searchPackages = async (q: string): Promise<PackageSummary[]> => {
     const res = await fetch(
         `https://registry.npmjs.org/-/v1/search?text=${q}`
     );
     const data: SearchResponse = await res.json();
 
-    return data.objects.map(({ package: { name, version, description, keywords } }) => {
+    return data.objects.map(({ package: { name, version, description, keywords, publisher: { username } } }) => {
         return {
             name,
             version,
             description,
-            keywords
+            keywords,
+            username
         }
     })
 }
