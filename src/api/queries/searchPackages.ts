@@ -6,6 +6,7 @@
  * @param {Object} request - The request object from the caller.
  * @returns {Promise<PackageSummary[]>} - A promise that resolves to an array of PackageSummary objects.
  */
+import type { PackageSummary } from "../types/PackageSummary";
 interface SearchResponse{
     objects: {
         package: {
@@ -16,9 +17,7 @@ interface SearchResponse{
         }
     }[]
 }
-export const searchPackages = async ({ request }: { request: Request }): Promise<PackageSummary[]> => {
-    const { searchParams } = new URL(request.url);
-    const q = searchParams.get('q');
+export const searchPackages = async (q:string): Promise<PackageSummary[]> => {
     const res = await fetch(
         `https://registry.npmjs.org/-/v1/search?text=${q}`
     );

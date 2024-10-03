@@ -3,6 +3,7 @@ import Root from '../pages/Root';
 import HomePage from '../pages/HomePage';
 import DetailPage from '../pages/DetailPage';
 import SearchPage from '../pages/search/SearchPage';
+import { searchLoader } from '../pages/search/searchLoader';
 const router = createBrowserRouter([
     {
         element: <Root />,
@@ -14,16 +15,7 @@ const router = createBrowserRouter([
             {
                 path: '/search',
                 element: <SearchPage />,
-                loader: async ({ request }) => {
-                    const { searchParams } = new URL(request.url);
-                    const q = searchParams.get('q');
-                    const res = await fetch(
-                        `https://registry.npmjs.org/-/v1/search?text=${q}`
-                    );
-                    const data = await res.json();
-
-                    return data.objects;
-                }
+                loader: searchLoader
             },
             {
                 path: '/detail',

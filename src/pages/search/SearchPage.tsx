@@ -3,10 +3,11 @@ import { useState } from 'react';
 import { Box, Stack, Pagination, Typography } from "@mui/material"
 import SortSearch from "../../components/pages/search/SortSearch";
 import { useLoaderData } from "react-router-dom";
+import type { SearchLoaderResult } from "./searchLoader";
 function SearchPage() {
     const [value, setValue] = useState<string>('Optimal');
-    const data = useLoaderData();
-    console.log('this is data from loader : ', data);
+    const data = useLoaderData() as SearchLoaderResult; 
+    console.log('this is data from loader : ', data.searchResult);
 
     console.log('this si value : ', value);
 
