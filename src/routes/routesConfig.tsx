@@ -13,7 +13,17 @@ const router = createBrowserRouter([
             },
             {
                 path: '/search',
-                element: <SearchPage />
+                element: <SearchPage />,
+                loader: async ({request}) => {
+                    const { searchParams } = new URL(request.url);
+                    const q = searchParams.get('q');
+                    const res = await fetch(
+                        `https://registry.npmjs.org/-/v1/search?text=${q}`
+                    );
+                    const data = await res.json();
+
+                    return data.objects;
+                }
             },
             {
                 path: '/detail',
